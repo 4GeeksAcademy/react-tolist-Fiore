@@ -10,40 +10,40 @@ const Todos = () => {
 
   const [newTodo, setNewTodo] = useState("");
 
-  const handleInputChange = (event) => {
+  const inputChange = (event) => {
     setNewTodo(event.target.value);
   };
 
-  const handleAddTodo = () => {
-    if (newTodo.trim() !== "") {
+  const addTodo = () => {
+    if (newTodo !== "") {
       setTodos([...todos, newTodo]);
       setNewTodo("");
     }
   };
 
-  const handleDeleteTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
+  const deleteTodo = (index) => {
+    const updatedTodos = todos.filter((_lista, i) => i !== index);
     setTodos(updatedTodos);
   };
 
-  const handleKeyDown = (event) => {
+  const keyDown = (event) => {
     if (event.key === "Enter") {
-      handleAddTodo();
+      addTodo();
     }
   };
 
   return (
     <>
-      <h1>Todos</h1>
+      <h1>TodosList😶‍🌫️</h1>
       <div className="container mt-5">
-        <div className="card">
+        <div className="card col-5 mx-auto">
           <div className="card-header">
             <div className="input-group mb-3">
               <input
                 type="text"
                 value={newTodo}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown} // Detecta la tecla Enter
+                onChange={inputChange}
+                onKeyDown={keyDown}
                 placeholder="What needs to be done?"
                 className="form-control"
               />
@@ -55,23 +55,25 @@ const Todos = () => {
               todos.map((todo, index) => (
                 <li
                   key={index}
-                  className="list-group-item d-flex justify-content-between align-items-center"
+                  className="list-group-item d-flex justify-content-between align-items-center todo-item"
                 >
                   {todo}
                   <button
                     type="button"
-                    className="btn-close btn-li btn-sm"
-                    onClick={() => handleDeleteTodo(index)}
+                    className="btn-close"
+                    onClick={() => deleteTodo(index)}
                   ></button>
                 </li>
               ))
-            ) : (
-              <li className="list-group-item text-center"></li>
+            ) : ( // if.... else
+              <li className="list-group-item text-center text-danger">
+                No hay tareas, añadir tareas 😒
+              </li>
             )}
           </ul>
 
-          <div className="card-footer text-muted">
-            {todos.length} item{todos.length !== 1 && "s"} left
+          <div className="card-footer bg-light text-muted">
+            {todos.length} item{todos.length !== 1 && "item"} left
           </div>
         </div>
       </div>
