@@ -33,3 +33,12 @@ h1 {
     cursor: pointer; 
   }
   
+  .mylist-item .btn-close {
+    visibility: hidden;
+  }
+  
+  .mylist-item:hover .btn-close {
+    visibility: visible;
+  }
+  
+  

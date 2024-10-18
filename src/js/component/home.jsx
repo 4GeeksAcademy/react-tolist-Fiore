@@ -55,7 +55,7 @@ const Todos = () => {
               todos.map((todo, index) => (
                 <li
                   key={index}
-                  className="list-group-item d-flex justify-content-between align-items-center todo-item"
+                  className="list-group-item d-flex justify-content-between align-items-center mylist-item"
                 >
                   {todo}
                   <button
