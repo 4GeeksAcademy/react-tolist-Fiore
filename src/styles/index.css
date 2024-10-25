@@ -10,20 +10,20 @@
 
 */
 body {
-  background-color: blanchedalmond;
+  background-color: rgb(190, 103, 148);
 }
 
 h1 {
   font-family: "Edu AU VIC WA NT Dots", cursive;
   font-optical-sizing: auto;
-  color: deeppink;
+  color: whitesmoke;
   display: flex;
   justify-content: center;
-  font-size: 150px;
+  font-size: 110px;
 }
 .card {
   font-family: "Indie Flower", cursive;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 
 }
